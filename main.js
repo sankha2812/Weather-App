@@ -1,5 +1,7 @@
+var akey = config.API_KEY;
+
 const api = {
-    key: "0139f06088eda5f85948204a42c2d7d2",
+    // key: "0139f06088eda5f85948204a42c2d7d2",
     base: "http://api.openweathermap.org/data/2.5/"
 }
 
@@ -14,7 +16,7 @@ function setQuery(evt){
 }
 
 function getResults(query) {
-    fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+    fetch(`${api.base}weather?q=${query}&units=metric&APPID=${akey}`)
         .then(weather => {
             return weather.json();
         }).then(displayResults);
