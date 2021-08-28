@@ -9,7 +9,7 @@ searchbox.addEventListener('keypress', setQuery);
 function setQuery(evt){
     if(evt.keyCode == 13) {
         getResults(searchbox.value);
-        // console.log(searchbox.value)
+        console.log(searchbox.value)
     }
 }
 
@@ -18,6 +18,8 @@ function getResults(query) {
         .then(weather => {
             return weather.json();
         }).then(displayResults);
+    // console.log(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`);
+
 }
 
 function displayResults(weather){
@@ -34,6 +36,11 @@ function displayResults(weather){
 
     let weather_el = document.querySelector('.current .weather');
     weather_el.innerText = weather.weather[0].main;
+    
+    let locationIcon = document.querySelector('.weather-icon');
+    iconId = weather.weather[0].icon;
+    locationIcon.innerHTML = `<img src="icons/${iconId}.png">`;
+    // insertion of weather icon 
 
     let hilow = document.querySelector('.hi-low');
     hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
