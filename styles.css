@@ -64,18 +64,19 @@ main {
 .location .date {
     color: rgb(255, 248, 234);
     font-size: 16px;
+    margin-top: 20px;
 }
 
 .current .temp {
     color: rgb(255, 248, 234);
     font-size: 82px;
-    font-weight: 700;
-    margin: 30px 0px;
+    font-weight: 900;
+    margin: 20px 0px;
     text-shadow: 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .current .temp span {
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .current .weather {
